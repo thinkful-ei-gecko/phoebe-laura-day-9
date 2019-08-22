@@ -1,4 +1,5 @@
 'use strict';
+let numOfDogPics;
 
 //function to display results/printing to console
 function displayResults(responseJson) {
@@ -7,7 +8,7 @@ function displayResults(responseJson) {
 
 //function to GET the images
 function fetchDogImage() {
-  fetch('https://dog.ceo/api/breeds/image/random')
+  fetch(`https://dog.ceo/api/breeds/image/random/${numOfDogPics}`)
     .then(response => response.json())
     .then(responseJson => 
       displayResults(responseJson))
@@ -18,6 +19,7 @@ function fetchDogImage() {
 function clickListener() {
   $('form').submit(event => {
     event.preventDefault();
+    numOfDogPics = $('#number-input').val();
     fetchDogImage();
   });
 }
