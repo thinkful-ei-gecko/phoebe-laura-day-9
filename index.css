@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body * {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Set padding and max width for text */
+
+/* For the focus: 
+- A Firefox bug makes focus outlines disappear, so you must restore them. *A MUST for keyboard users!*
+*/
+_____ :focus {
+  outline: auto 5px -webkit-focus-ring-color;
+  box-shadow: 0;
+  cursor: pointer;
+}
+
