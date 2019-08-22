@@ -12,3 +12,7 @@ a :focus {
   cursor: pointer;
 }
 
+img {
+  display: block;
+}
+
