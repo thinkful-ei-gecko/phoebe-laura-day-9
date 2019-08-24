@@ -16,3 +16,6 @@ img {
   display: block;
 }
 
+.error {
+  color: red;
+}
