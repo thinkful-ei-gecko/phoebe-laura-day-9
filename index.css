@@ -6,14 +6,26 @@ body * {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  padding: 15px;
+}
+
 a :focus {
   outline: auto 5px -webkit-focus-ring-color;
   box-shadow: 0;
   cursor: pointer;
 }
 
+.results {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 img {
   display: block;
+  max-height: 330px;
+  width: auto;
+  margin: 15px;
 }
 
 .error {

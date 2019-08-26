@@ -12,7 +12,7 @@ const index = (function () {
   function displayResults(responseJson) {
     clearResults();
     responseJson.message.forEach(img => {
-      $('.results').append(`<img src='${img}'>`);
+      $('.results').append(`<img src='${img}' alt='random image of a dog' />`);
     });
   }
 
@@ -29,18 +29,28 @@ const index = (function () {
   function clickListener() {
     $('form').submit(event => {
       event.preventDefault();
+//      $('.error').html(''); >>>this goes with unused lines below 
+
       let numOfDogPics = $('#number-input').val();
-      console.log(numOfDogPics);
+      //console.log(numOfDogPics);
+      
       if (!numOfDogPics) {
         numOfDogPics = 3;
       }
+      fetchDogImage(numOfDogPics);
+      $('#number-input').val('');
+
+// This next section was the original approach, which functioned well, but now
+//  the number limit is controlled with the html input attributes:  min="1" max="50"
+// The html solution also prevents higher/lower numbers from showing in the input box
+/*
       if (numOfDogPics <= 50 && numOfDogPics >= 1) {
         fetchDogImage(numOfDogPics);
       }
       else {
         clearResults();
         $('.error').html('Please enter a number between 1 to 50');
-      }
+      }  */
     });
   }
 
